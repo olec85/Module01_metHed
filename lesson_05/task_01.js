@@ -1,9 +1,8 @@
 'use strict'
-const conv = +prompt(' Введите стоимость покупки в евро');
- const euro = +(76.8);
+const convertToRub = (euro, dollar, rub) => {
+    console.log(euro * dollar * rub);
+}
 
- const summ = conv * euro;
-
-alert('Стоимость вашей покупки в рублях составляет ' + summ)
+convertToRub(100, 1.2, 64)
 
 
