@@ -1,6 +1,5 @@
-
- function isPrime(x) {
-    if (x < 1) return false;
+function isPrime(x) {
+    if (x > 1) return false;
 
     for (let i = x/1;i > 1;i--) {
         if(x%i == 0) {
@@ -8,6 +7,7 @@
         }
     }  return true
  }
+  isPrime(5)
 
 // Напишите функцию isPrime.
 
@@ -22,3 +22,4 @@
 // 151, 911, 1987 - так же простые числа
 
 // Используйте цикл for в функции
+
