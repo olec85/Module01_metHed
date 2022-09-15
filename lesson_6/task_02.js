@@ -1,13 +1,15 @@
-function isPrime(x) {
-    if (x > 1) return false;
+'use strict'
 
-    for (let i = x/1;i > 1;i--) {
-        if(x%i == 0) {
-            return false
-        }
-    }  return true
- }
-  isPrime(5)
+  const isPrime = (number) => {
+    for (let i = 2; i < number; i++) {
+    if(!(number % i)) {
+    return false;
+    }
+    }
+    return true;
+    }
+    
+    console.log(isPrime(151));
 
 // Напишите функцию isPrime.
 
