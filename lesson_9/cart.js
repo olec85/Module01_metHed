@@ -1,39 +1,50 @@
 'use strict'
 
 const cart = {
-    items:[ {id: 1, title: 'Notebook'},
-            {id: 2, title: 'Mouse'},
-            {id: 3, title: 'Keyboard'},
-            {id: 4, title: 'Gamepad'},
-        ],
+    items:[],
     totalPrice:0,
     count:0,
 
     getTotalPrice() {
         return this.totalPrice;
         },
-        add:{
-            name:'',
-            price:0,
-            count:1,
+
+    add(name, price, amount = 1) {
+        this.items.push({
+            name,
+            price,
+            amount,
+        });
+        this.increaseCount(amount);
+        this.calculateItemPrice();
         },
 
-    increaseCount() {
-        return this.items;
+    increaseCount(number) {
+        this.count += number;
     },
 
     calculateItemPrice() {
-        return this.totalPrice
+        this.totalPrice = this.items.reduce((sum,{price,amount}) => {
+            return sum+=price*amount;
+        }, 0)
     },
+
      clear() {
-        return this.clear.count
+        this.items=[];
+        this.count = 0;
+        this.totalPrice = 0;
      },
+
      print() {
-        return this.print.count
+        console.log(JSON.stringify(this.items));
+        console.log(this.getTotalPrice());
      },
 };
 
-console.log(print);
+cart.add('Notebook', 50000, 3,);
+cart.add('Macbook', 150000, 2,);
+cart.add('Keyboard', 15000, 2,);
+cart.print();
 
 
 
