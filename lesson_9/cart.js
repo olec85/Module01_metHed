@@ -1,56 +1,92 @@
-'use strict'
+'use strict';
 
 const cart = {
-    items:[],
-    totalPrice:0,
-    count:0,
+  items: [], // пустой массив - это товары
+  totalPrice: 0, // общая стоимость корзины
+  count: 0, // количество товаров
 
-    getTotalPrice() {
-        return this.totalPrice;
-        },
+  getTotalPrice() {
+    return this.totalPrice;
+  }, // метод для получения общей стоимости товара
 
-    add(name, price, amount = 1) {
-        this.items.push({
-            name,
-            price,
-            amount,
-        });
-        this.increaseCount(amount);
-        this.calculateItemPrice();
-        },
+  add(name, price, amount = 1) {
+    this.items.push({
+      name, // название товара
+      price, // цену товара
+      amount, // количество товара (опциональный параметр, по умолчанию 1 товар)
+    });// добавить товар
+    this.increaseCount(amount);//
+    this.calculateItemPrice();//
+  }, // тот метод формирует объект из полученных
+  // параметров и добавляет его в свойство items
 
-    increaseCount(number) {
-        this.count += number;
-    },
+  increaseCount(number) {
+    this.count += number;// Принимает один параметр(число)
+    // Увеличивает свойство count на это число
+  },
 
-    calculateItemPrice() {
-        this.totalPrice = this.items.reduce((sum,{price,amount}) => {
-            return sum+=price*amount;
-        }, 0)
-    },
+  calculateItemPrice() {
+    this.totalPrice = this.items.reduce((sum, {price, amount}) =>
+      sum += price * amount// пересчитывает стоимость всей корзины с помощью
+      // метода reduce и записывает значение в totalPrice
+    , 0);
+  },
 
-     clear() {
-        this.items=[];
-        this.count = 0;
-        this.totalPrice = 0;
-     },
+  clear() {
+    this.items = [];
+    this.count = 0;
+    this.totalPrice = 0;
+  }, // oчищает полностью нашу корзину, возвращает все значения в изначальные
 
-     print() {
-        console.log(JSON.stringify(this.items));
-        console.log(this.getTotalPrice());
-     },
+  print() {
+    console.log(JSON.stringify(this.items));// Выводит в консоль
+    // JSON строку из массива items
+    console.log(this.getTotalPrice());// выводит общую стоимость корзины
+  },
 };
 
-cart.add('Notebook', 50000, 3,);
-cart.add('Macbook', 150000, 2,);
-cart.add('Keyboard', 15000, 2,);
-cart.print();
-
-
-
-
-
-
-
+cart.add('Notebook', 50000, 3);
+cart.add('Macbook', 150000, 2);
+cart.add('Keyboard', 15000, 2);
+cart.print();// вызываем метод print для вывода информации в консоль
+/*
+Создайте файл cart.js, подключите к html-файлу
+Создайте объект cart — корзина
+Объект будет содержать следующие свойства:
+items = пустой массив - это товары
+totalPrice = 0 - общая стоимость корзины
+count = 0 - количество товаров
+и методы
+getTotalPrice - получить общую стоимость товаров
+add - добавить товар
+increaseCount - увеличить количество товаров
+calculateItemPrice - посчитать общую стоимость товаров
+clear - очистить корзину
+print - распечатать корзину
+Далее описание каждого метода
+getTotalPrice()
+метод возвращает значение свойства totalPrice
+calculateItemPrice()
+пересчитывает стоимость всей корзины и записывает значение в totalPrice
+increaseCount()
+Принимает один параметр(число)
+Увеличивает свойство count на это число
+add()
+Принимает три параметра:
+название товара
+цену товара
+количество товара (опциональный параметр, по умолчанию 1 товар)
+этот метод формирует объект из полученных параметров и
+добавляет его в свойство items
+так же вызывает все необходимые методы чтобы свойства
+count и totalPrice были актуальные
+clear()
+Очищает полностью нашу корзину, возвращает все значения в изначальные
+print()
+Выводит в консоль JSON строку из массива items и на
+следующей строке выводит общую стоимость корзины
+Для проверки работы функционала добавить 3 или более товаров в корзину
+После вызвать метод print для вывода информации в консоль
+*/
 
 
