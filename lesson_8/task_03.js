@@ -11,7 +11,7 @@ for (let i = 2; i <= 10; i++) {
     if (even) {
       i % 2 == 0;
       return[]
-    }else (odd) {
+    }else if (odd) {
         i % 2 !== 0;
     }
   }//чот я намудрил не то
