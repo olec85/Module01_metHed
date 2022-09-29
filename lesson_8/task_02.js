@@ -1,10 +1,15 @@
 'use strict';
 
-function randomNumber(min, max, n, m) {
-  const r = Math.random() * (max - min) + min;
-  return Math.floor(r);
-}
-for (let i = 0; i < 100; i++) {
-  console.log(randomNumber(0, 100));
-}//а как сюда вписать диапазон для массива и  Учтите, что n и m могут быть отрицательными, а также может быть n > m или n < m.
+const randomazer = (amount, n, m) => {
+  let result =[];
+  let d = m > n ? m - n + 1 : n - m + 1;
+  console.log(d);
+  let d1 = m > n ? n:m;
+  console.log(d1);
+  while(result.length < amount) {
+    result.push(Math.floor(Math.random() * (d) + (d1)));//
+  }  
+  return result;
 
+};
+console.log(randomazer(40, 15, -25));

@@ -1,13 +1,13 @@
 'use strict';
 
-function randomNumber(min, max) {
-  const r = Math.random() * (max - min) + min;
-  return Math.floor(r);
+const randomazer = (amount) => {
+  let result =[];
+  while(result.length < amount) {
+    result.push(Math.floor(Math.random() * (100 + 1)));
+  } 
+  return result
 }
-for (let i = 0; i < 100; i++) {
-  console.log(randomNumber(0, 100));
-}
-
+console.log(randomazer(4));
 
 // Напишите функцию генератор  массива случайных чисел в файле task01.js
 
