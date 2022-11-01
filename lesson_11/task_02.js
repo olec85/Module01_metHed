@@ -1,8 +1,8 @@
 
 function task_02 (arr) {
-    var t = Math.round(Math.random() * 11)
+    const t = Math.round(Math.random() * 11)
     arr.push(t);
-    var sum = arr.reduce((s, el) => el + s, 0)
+    const sum = arr.reduce((s, el) => el + s, 0)
     if (sum > 50) return arr
     else return task_02 (arr)
 }

@@ -16,6 +16,7 @@ const rectangle  = {
     }
 }
 rectangle.changeWidth = 10;
+rectangle.changeHeight = 10;
 console.log(rectangle.width);
 console.log(rectangle.perim);
 console.log(rectangle.plosh);

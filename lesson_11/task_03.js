@@ -10,10 +10,10 @@ const cart = {
     if ('METHED') {
         discount + 15
     }
-  }
+  },
 
-  getTotalPrice() {
-    return this.totalPrice;
+  get totalPrice() {
+    return this.calculateItemPrice;
   }, // метод для получения общей стоимости товара
 
   add(name, price, amount = 1) {
@@ -33,12 +33,8 @@ const cart = {
   },
 
   calculateItemPrice() {
-    this.totalPrice = this.items.reduce((sum, {price, amount}) =>
-      sum += price * amount// пересчитывает стоимость всей корзины с помощью
-      // метода reduce и записывает значение в totalPrice
-    , 0);
+    return (this.items.reduce((sum, {price, amount}) => sum += price * amount, 0) * (1 - this.discount / 100));
   },
-
   clear() {
     this.items = [];
     this.count = 0;
@@ -48,7 +44,7 @@ const cart = {
   print() {
     console.log(JSON.stringify(this.items));// Выводит в консоль
     // JSON строку из массива items
-    console.log(this.getTotalPrice());// выводит общую стоимость корзины
+    console.log(this.totalPrice());// выводит общую стоимость корзины
   },
 };
 
