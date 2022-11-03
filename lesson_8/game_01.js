@@ -4,7 +4,7 @@ function searchNumber (min, max) {
     
     let randomNumber = Math.floor(Math.random() * (max- min + 1)) + min;
     cycleStart: while( true ) {
-        let userNumber =  prompt(`Введите число`);
+        let userNumber =  +prompt(`Введите число`);
         if (+ userNumber) {
             if (+ userNumber < randomNumber ) {
                 alert(`Больше`);
