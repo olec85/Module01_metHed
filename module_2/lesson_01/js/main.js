@@ -1,14 +1,27 @@
 'use strict';
 
-let items = document.querySelector('.items');
-let item = document.querySelectorAll('.item');
+let items = document.querySelector('.items');//получили все 6 страниц ol класс
+console.log(items);
 
-items.insertBefore(item[1], item[0]);//two
-items.insertBefore(item[4], item[0]);//five
-items.insertBefore(item[2], item[4]);//three
-items.insertBefore(item[3], item[4]);//four
-items.insertBefore(item[5], item[0]);//six
-items.insertBefore(item[0], item[4]);//one
+const container = document.querySelector('.container');
+
+const propsItem = container.querySelectorAll('.props__item');//получаем все элементы контейнера
+console.log(propsItem);
+
+const propsList = document.querySelectorAll('.props__list');
+const propsItems = document.querySelectorAll('.props__item');
+
+const ads = document.querySelector('.ads');
+ads.classList.remove('ads');
+
+// let item = document.querySelectorAll('.item');
+
+// items.insertBefore(item[1], item[0]);//two
+// items.insertBefore(item[4], item[0]);//five
+// items.insertBefore(item[2], item[4]);//three
+// items.insertBefore(item[3], item[4]);//four
+// items.insertBefore(item[5], item[0]);//six
+// items.insertBefore(item[0], item[4]);//one
 
 // const propsList = document.querySelectorAll('.props__list');
 // const propsItem = document.querySelectorAll('.props__item');
