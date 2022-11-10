@@ -14,6 +14,9 @@ const propsItems = document.querySelectorAll('.props__item');
 const ads = document.querySelector('.ads');
 ads.classList.remove('ads');
 
+ads.parentNode.removeChild(ads);
+
+
 // let item = document.querySelectorAll('.item');
 
 // items.insertBefore(item[1], item[0]);//two
